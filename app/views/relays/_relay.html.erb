@@ -1,0 +1,65 @@
+<p class="lead">Relays</p>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Action</th>
+      <th>Name</th>
+      <th>Pin</th>
+      <th>Number</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @relays.each do |relay| %>
+      <tr>
+        <td><% if relay.status == "off" %>
+	<button onClick="turnon('<%= relay.number %>')" class="btn btn-danger btn-small"> Turn on </button>
+        <% elsif relay.status == "on" %>
+        <button onClick="turnoff('<%= relay.number %>')" class="btn btn-success btn-small"> Turn off </button>
+        <% end %>
+	</td>
+        <td><%= relay.name %></td>
+        <td><%= relay.pin %></td>
+        <td><%= relay.number %></td>
+	<td><%= relay.status %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Relay', new_relay_path %>
+
+
+<script>
+
+function turnoff(number)
+{
+  $.ajax({
+    url: "/relays/turnoff",
+    type: "POST",
+    data: {id: number},
+    dataType: "script",
+    success: function(resp){
+      //alert( "Turned off: " + number );
+     }
+  });
+}
+
+function turnon(number)
+{
+  $.ajax({
+    url: "/relays/turnon",
+    type: "POST",
+    data: {id: number},
+    dataType: "script",
+    success: function(resp){
+      //alert( "Turned on: " + number );
+     }
+  });
+}
+
+</script>
