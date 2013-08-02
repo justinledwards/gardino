@@ -3,6 +3,8 @@ gardino
 
 Garden control and monitoring using Dino + Rails + Arduino
 
+Dino - https://github.com/austinbv/dino
+
 Currently I have no sensors located on the board yet.
 
 The database is just SQLite right now for mobility sake.
