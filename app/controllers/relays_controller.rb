@@ -1,6 +1,6 @@
 class RelaysController < ApplicationController
   before_action :set_relay, only: [:show, :edit, :update, :destroy]
-
+  skip_before_filter :verify_authenticity_token
   # GET /relays
   # GET /relays.json
   def index
