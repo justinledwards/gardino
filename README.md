@@ -19,3 +19,5 @@ load partials via 'turnoff' and 'turnon'.
 Requirements:  you must install Redis, have an up to date ruby / rails
 
 Installation:  `bundle install` , `rake db:migrate` , `rails s` , modify files mentioned above to fit your needs.   
+
+Navigate to `http://yourapp/sidekiq` to see jobs that have run or will be running.   
