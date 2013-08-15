@@ -16,3 +16,6 @@ All of the current code is in `app/controllers/relays_controller.rb` and `app/vi
 I am storing the state of the relays in the model and controlling the on and off with ajax post functions that 
 load partials via 'turnoff' and 'turnon'.
 
+Requirements:  you must install Redis, have an up to date ruby / rails
+
+Installation:  `bundle install` , `rake db:migrate` , `rails s` , modify files mentioned above to fit your needs.   
