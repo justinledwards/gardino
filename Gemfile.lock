@@ -7,6 +7,15 @@ GIT
       railties (>= 3.0)
       sass (>= 3.2)
 
+GIT
+  remote: git://github.com/austinbv/dino.git
+  revision: 0891d2e89eb3b6d8183b6d6106b768a2e6967713
+  branch: 0.12.0-wip
+  specs:
+    dino (0.12.0)
+      serialport
+      trollop
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -37,6 +46,11 @@ GEM
     arel (4.0.0)
     atomic (1.1.10)
     builder (3.1.4)
+    celluloid (0.14.1)
+      timers (>= 1.0.0)
+    clockwork (0.6.0)
+      activesupport
+      tzinfo (~> 0.3.35)
     coffee-rails (4.0.0)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0.beta, < 5.0)
@@ -44,8 +58,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
-    dino (0.11.2)
-      serialport
+    connection_pool (1.1.0)
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
@@ -68,6 +81,8 @@ GEM
     puma (2.4.0)
       rack (>= 1.1, < 2.0)
     rack (1.5.2)
+    rack-protection (1.5.0)
+      rack
     rack-test (0.6.2)
       rack (>= 1.0)
     rails (4.0.0)
@@ -86,6 +101,9 @@ GEM
     rake (10.1.0)
     rdoc (3.12.2)
       json (~> 1.4)
+    redis (3.0.4)
+    redis-namespace (1.3.1)
+      redis (~> 3.0.0)
     sass (3.2.10)
     sass-rails (4.0.0)
       railties (>= 4.0.0.beta, < 5.0)
@@ -95,6 +113,19 @@ GEM
       json (>= 1.1.3)
       rdoc (~> 3.10)
     serialport (1.1.0)
+    sidekiq (2.13.1)
+      celluloid (>= 0.14.1)
+      connection_pool (>= 1.0.0)
+      json
+      redis (>= 3.0)
+      redis-namespace
+    sinatra (1.4.3)
+      rack (~> 1.4)
+      rack-protection (~> 1.4)
+      tilt (~> 1.3, >= 1.3.4)
+    slim (2.0.1)
+      temple (~> 0.6.6)
+      tilt (>= 1.3.3, < 2.1)
     sprockets (2.10.0)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -105,13 +136,16 @@ GEM
       activesupport (>= 3.0)
       sprockets (~> 2.8)
     sqlite3 (1.3.7)
+    temple (0.6.6)
     thor (0.18.1)
     thread_safe (0.1.2)
       atomic
     tilt (1.4.1)
+    timers (1.1.0)
     treetop (1.4.14)
       polyglot
       polyglot (>= 0.3.1)
+    trollop (2.0)
     turbolinks (1.3.0)
       coffee-rails
     tzinfo (0.3.37)
@@ -124,14 +158,18 @@ PLATFORMS
 
 DEPENDENCIES
   anjlab-bootstrap-rails!
+  clockwork
   coffee-rails (~> 4.0.0)
-  dino
+  dino!
   jbuilder (~> 1.2)
   jquery-rails
   puma
   rails (= 4.0.0)
   sass-rails (~> 4.0.0)
   sdoc
+  sidekiq
+  sinatra (>= 1.3.0)
+  slim (>= 1.1.0)
   sqlite3
   turbolinks
   uglifier (>= 1.3.0)

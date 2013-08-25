@@ -1,12 +1,13 @@
 <p class="lead">Relays</p>
-
+<div class="row">
+<div class="col-xs-6 col-sm-6 col-md-6">
 <table class="table table-striped">
   <thead>
     <tr>
       <th>Action</th>
       <th>Name</th>
-      <th>Pin</th>
-      <th>Number</th>
+<!--       <th>Pin</th>
+      <th>Number</th> -->
       <th>Status</th>
     </tr>
   </thead>
@@ -21,17 +22,20 @@
         <% end %>
 	</td>
         <td><%= relay.name %></td>
-        <td><%= relay.pin %></td>
-        <td><%= relay.number %></td>
+<!--         <td><%= relay.pin %></td>
+        <td><%= relay.number %></td> -->
 	<td><%= relay.status %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+</div>
+</div>
 
 <br>
 
-<%= link_to 'New Relay', new_relay_path %>
+<%= link_to 'New Relay', new_relay_path, :class => "btn btn-mini btn-primary" %>
+<p>&nbsp;</p>
 
 
 <script>

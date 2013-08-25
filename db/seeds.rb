@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+lights = Relay.create( name: 'Lights',  pin: '2', number: '1', status: 'on' )
+pumps = Relay.create( name: 'Pumps',  pin: '3', number: '2', status: 'on' )
