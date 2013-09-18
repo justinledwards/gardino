@@ -16,9 +16,9 @@
     <% @relays.each do |relay| %>
       <tr>
         <td><% if relay.status == "off" %>
-	<button onClick="turnon('<%= relay.number %>')" class="btn btn-danger btn-small"> Turn on </button>
+	<button onClick="turnon('<%= relay.id %>')" class="btn btn-danger btn-small"> Turn on </button>
         <% elsif relay.status == "on" %>
-        <button onClick="turnoff('<%= relay.number %>')" class="btn btn-success btn-small"> Turn off </button>
+        <button onClick="turnoff('<%= relay.id %>')" class="btn btn-success btn-small"> Turn off </button>
         <% end %>
 	</td>
         <td><%= relay.name %></td>

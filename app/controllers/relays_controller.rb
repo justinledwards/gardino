@@ -29,7 +29,9 @@ class RelaysController < ApplicationController
   # POST /relays.json
   def create
     @relay = Relay.new(relay_params)
-
+    @rnum = @relay.number
+    @rpin = @relay.pin
+    eval("$relay#{@rnum} = Dino::Components::Led.new(pin: @rpin, board: Gardino::Application.config.board)")
     respond_to do |format|
       if @relay.save
         format.html { redirect_to @relay, notice: 'Relay was successfully created.' }

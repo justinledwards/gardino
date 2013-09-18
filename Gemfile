@@ -48,10 +48,19 @@ end
 gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
                               :github => 'anjlab/bootstrap-rails',
                               :branch => '3.0.0'
-gem 'dino', :github => 'austinbv/dino' , :branch => '0.12.0-wip'
-gem 'puma'
+#gem 'dino', :github => 'austinbv/dino' , :branch => '0.12.0-wip'
+gem 'dino', :github => 'austinbv/dino' , :branch => 'master'
+#gem 'puma'
 gem 'clockwork'
 gem 'sidekiq'
 gem 'slim', '>= 1.1.0'
 gem 'sinatra', '>= 1.3.0', :require => nil
 
+group :development do
+  gem "quiet_assets", ">= 1.0.1"
+  gem "better_errors", :git => 'https://github.com/charliesome/better_errors.git'
+  gem "binding_of_caller", :git => 'https://github.com/banister/binding_of_caller.git'
+  gem "meta_request", "~> 0.2.5"
+  gem "rails-erd"
+  gem 'html2haml'
+end

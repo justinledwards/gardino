@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Garduino::Application.config.secret_key_base = '771ac95057347a05530e52807aaea8bb2d00a5dd1a0832b928751455bc1a24a9ed51d4de1f067ed935ac12413586b66dcd4a83ad4d61121bc6573d749530fb12'
+Gardino::Application.config.secret_key_base = '771ac95057347a05530e52807aaea8bb2d00a5dd1a0832b928751455bc1a24a9ed51d4de1f067ed935ac12413586b66dcd4a83ad4d61121bc6573d749530fb12'

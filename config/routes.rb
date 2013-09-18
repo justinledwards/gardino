@@ -1,4 +1,4 @@
-Garduino::Application.routes.draw do
+Gardino::Application.routes.draw do
   require 'sidekiq/web'
   mount Sidekiq::Web => '/sidekiq'
   resources :relays do

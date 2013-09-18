@@ -1,1 +1,6 @@
-<h1>Welcome to Garduino</h1>
+<h1>Welcome to Gardino</h1>
+<%# $sensor1.read { |value|  $temperature = (((value.to_f * 0.004882814) - 0.5) * 100) * (9.0/5.0) + 32.00  } 
+%>
+<p>Temperature is <%=# $temperature.round(1) 
+%>F
+</p>

@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Garduino::Application.load_tasks
+Gardino::Application.load_tasks
