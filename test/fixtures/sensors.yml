@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  type: 
+  pin: 1
+  number: 1
+  last_reading: MyString
+  description: MyText
+
+two:
+  name: MyString
+  type: 
+  pin: 1
+  number: 1
+  last_reading: MyString
+  description: MyText

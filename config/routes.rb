@@ -1,4 +1,6 @@
 Gardino::Application.routes.draw do
+  
+
   require 'sidekiq/web'
   mount Sidekiq::Web => '/sidekiq'
   resources :relays do
@@ -7,7 +9,11 @@ Gardino::Application.routes.draw do
       post 'turnon'
   }
   end
-
+  resources :sensors do
+    collection {
+      post 'sensorread'
+    }
+  end
   get "welcome/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

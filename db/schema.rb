@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130802043650) do
+ActiveRecord::Schema.define(version: 20131016170843) do
 
   create_table "relays", force: true do |t|
     t.string   "name"
@@ -20,6 +20,17 @@ ActiveRecord::Schema.define(version: 20130802043650) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "status"
+  end
+
+  create_table "sensors", force: true do |t|
+    t.string   "name"
+    t.integer  "pin"
+    t.integer  "number"
+    t.string   "last_reading"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "sensor_type"
   end
 
 end

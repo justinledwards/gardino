@@ -21,6 +21,20 @@ begin
 
     puts r.name
   end
+
+  availablesensors = Sensor.all
+  availablesensors.each do |s|
+    snum = s.number
+    spin = s.pin
+    stype = s.sensor_type
+    if stype == "DHT"
+      eval("$sensor#{snum}temp = Dino::Components::DHT::Temperature.new(pin: spin, board: Gardino::Application.config.board)")
+      eval("$sensor#{snum}humidity = Dino::Components::DHT::Humidity.new(pin: spin, board: Gardino::Application.config.board)")
+    end
+    puts "#{s.name}"
+
+    
+  end
   
 
 
@@ -28,4 +42,14 @@ rescue Dino::BoardNotFound
   puts 'The board is not connected'
 end
 
+# 10000.times { 
+#   rnum = [1, 2, 3, 4, 5, 6, 7, 8].sample
 
+#   relay = eval("$relay#{rnum}")
+#   onoroff = ["on", "off"].sample
+#   if onoroff == "on"
+#     relay.on
+#   else
+#     relay.off
+#   end
+# }

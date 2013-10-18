@@ -48,8 +48,8 @@ end
 gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
                               :github => 'anjlab/bootstrap-rails',
                               :branch => '3.0.0'
-#gem 'dino', :github => 'austinbv/dino' , :branch => '0.12.0-wip'
-gem 'dino', :github => 'austinbv/dino' , :branch => 'master'
+gem 'dino', :github => 'austinbv/dino' , :branch => '0.12.0-wip'
+#gem 'dino', :github => 'austinbv/dino' , :branch => 'master'
 #gem 'puma'
 gem 'clockwork'
 gem 'sidekiq'

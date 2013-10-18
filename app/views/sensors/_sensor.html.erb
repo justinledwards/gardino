@@ -1,0 +1,60 @@
+<p class="lead">Sensors</p>
+<div class="row">
+<div class="col-xs-6 col-sm-6 col-md-6">
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Action</th>
+      <th>Name</th>
+      <th>Type</th>
+      <!-- <th>Pin</th> -->
+      <!-- <th>Number</th> -->
+      <th>Last reading</th>
+      <!-- <th>Description</th> -->
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sensors.each do |sensor| %>
+      <tr>
+        <td><button onClick="sensorread('<%= sensor.id %>')" class="btn btn-info btn-small"> Read </button></td>
+        <td><%= sensor.name %></td>
+        <td><%= sensor.sensor_type %></td>
+        <!-- <td><%= sensor.pin %></td> -->
+        <!-- <td><%= sensor.number %></td> -->
+        <td><%= sensor.last_reading %></td>
+        <!-- <td><%= sensor.description %></td> -->
+        <td><%= link_to 'Show', sensor %></td>
+        <td><%= link_to 'Edit', edit_sensor_path(sensor) %></td>
+        <td><%= link_to 'Destroy', sensor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+</div>
+
+<br>
+
+<%= link_to 'New Sensor', new_sensor_path, :class => "btn btn-mini btn-primary" %>
+
+<p>&nbsp;</p>
+
+<script>
+
+function sensorread(number)
+{
+  $.ajax({
+    url: "/sensors/sensorread",
+    type: "POST",
+    data: {id: number},
+    dataType: "script",
+    success: function(resp){
+      //alert( "Read: " + number );
+     }
+  });
+}
+</script>
