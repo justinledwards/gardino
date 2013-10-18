@@ -3,11 +3,15 @@ gardino
 
 Garden control and monitoring using Dino + Rails + Arduino
 
+
+Updated Screenshot http://i.imgur.com/01BpGBY.png
+
 Screenshot - http://i.imgur.com/z4v02l0.png
 
 Dino - https://github.com/austinbv/dino
 
-Currently I have no sensors located on the board yet.
+
+I've added support for the DHT sensors.  
 
 The database is just SQLite right now for mobility sake.
 
@@ -21,3 +25,4 @@ Requirements:  you must install Redis, have an up to date ruby / rails
 Installation:  `bundle install`, `rake db:migrate`, `rake db:seed`, `rails s`, modify files mentioned above to fit your needs.   
 
 Navigate to `http://yourapp/sidekiq` to see jobs that have run or will be running.   
+
